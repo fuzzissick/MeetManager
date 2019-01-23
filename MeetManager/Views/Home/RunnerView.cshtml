@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "RunnerView";
+}
+
+<h2>@ViewBag.Runner.FullName - @ViewBag.Runner.Year</h2>
+<h3>@ViewBag.Runner.Team.CollegeName</h3>
+<h4>@ViewBag.Runner.EventGroup</h4>
+
+<h2 style="text-align:center">Races</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Time</th>
+            <th>Meet</th>
+        </tr>
+    </thead>
+    @foreach (Race race in ViewBag.Runner.Races)
+    {
+        <tr href="#">
+
+            <td>
+                @race.Event.Name
+            </td>
+            <td>
+                @race.Time
+            </td>
+            <td>
+                <a href="~/Home/MeetView/@race.Meet.Id">@race.Meet.Name</a>
+            </td>
+        </tr>
+    }
+</table>

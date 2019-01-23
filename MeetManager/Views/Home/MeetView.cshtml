@@ -1,0 +1,71 @@
+﻿@model List<Race>
+
+@{
+    ViewData["Title"] = "Meet View";
+}
+
+<h2>@ViewBag.MeetName</h2>
+<h3>@ViewBag.Location</h3>
+<h4 style="text-align:center">Teams Attending</h4>
+@foreach(Team team in ViewBag.Teams)
+{
+<h5 style="text-align:center"><a href="~/Home/TeamView/@team.Id">@team.CollegeName</a></h5>
+
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Team</th>
+            <th>Runner</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    @foreach (Race race in Model)
+    {
+        <tr href="#">
+
+            <td>
+                @race.Event.Name
+            </td>
+            <td>
+                <a href="~/Home/TeamView/@race.Runner.Team.Id">@race.Runner.Team.CollegeName</a>
+            </td>
+            <td>
+                <a href="~/Home/RunnerView/@race.Runner.Id">@race.Runner.FirstName  @race.Runner.LastName</a>
+            </td>
+            <td>
+                @race.Time
+            </td>
+        </tr>
+    }
+</table>
+
+<h2>Add a Race</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="HandleNewRace">
+             <input type="hidden" name="MeetId" value="@ViewBag.MeetId" />         
+            <div class="form-group">
+                <label for="RunnerId" class="control-label">Runner</label>
+                @Html.DropDownList("RunnerId", new SelectList(ViewBag.RunnersList, "Id", "FullNameAndCollege"), new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="EventId" class="control-label">Event</label>
+                @Html.DropDownList("EventId", new SelectList(ViewBag.EventsList, "Id", "Name"), new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="time" class="control-label">Time</label>
+                <input name="time" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add a new Race to the Meet" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

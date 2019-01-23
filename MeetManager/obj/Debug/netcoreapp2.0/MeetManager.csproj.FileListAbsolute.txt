@@ -1,0 +1,11 @@
+C:\Users\Quade-Laptop\source\repos\MeetManager\bin\Debug\netcoreapp2.0\MeetManager.deps.json
+C:\Users\Quade-Laptop\source\repos\MeetManager\bin\Debug\netcoreapp2.0\MeetManager.runtimeconfig.json
+C:\Users\Quade-Laptop\source\repos\MeetManager\bin\Debug\netcoreapp2.0\MeetManager.runtimeconfig.dev.json
+C:\Users\Quade-Laptop\source\repos\MeetManager\bin\Debug\netcoreapp2.0\MeetManager.dll
+C:\Users\Quade-Laptop\source\repos\MeetManager\bin\Debug\netcoreapp2.0\MeetManager.pdb
+C:\Users\Quade-Laptop\source\repos\MeetManager\obj\Debug\netcoreapp2.0\MeetManager.csproj.CoreCompileInputs.cache
+C:\Users\Quade-Laptop\source\repos\MeetManager\obj\Debug\netcoreapp2.0\MeetManager.AssemblyInfoInputs.cache
+C:\Users\Quade-Laptop\source\repos\MeetManager\obj\Debug\netcoreapp2.0\MeetManager.AssemblyInfo.cs
+C:\Users\Quade-Laptop\source\repos\MeetManager\obj\Debug\netcoreapp2.0\MeetManager.dll
+C:\Users\Quade-Laptop\source\repos\MeetManager\obj\Debug\netcoreapp2.0\MeetManager.pdb
+C:\Users\Quade-Laptop\source\repos\MeetManager\obj\Debug\netcoreapp2.0\MeetManager.csprojAssemblyReference.cache

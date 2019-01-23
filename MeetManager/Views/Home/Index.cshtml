@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model List<Meet>
+
+<h2>Meets</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Meet Name</th>
+            <th>Location</th>
+            <th>Hosting Team</th>
+        </tr>
+    </thead>
+    @foreach (Meet meet in Model)
+    {
+        <tr href="#">
+
+            <td>
+                <a href="~/Home/MeetView/@meet.Id">@meet.Name</a>
+            </td>
+            <td>
+                @meet.Location
+            </td>
+            <td>
+                @meet.Team.CollegeName
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "AllTeams";
+}
+
+<h2>Teams</h2>
+
+@foreach (var teams in ViewBag.Teams)
+{
+    <h3 style="text-align:center">@teams[0].Conference</h3>
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th>College Name</th>
+                <th>Mascot</th>
+                <th>Coach</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        @foreach (Team team in teams)
+        {
+            <tr href="#">
+
+                <td>
+                    <a href="~/Home/TeamView/@team.Id">@team.CollegeName</a>
+                </td>
+                <td>
+                    @team.Mascot
+                </td>
+                <td>
+                    @team.Coach
+                </td>
+                <td>
+                    @team.Location
+                </td>
+            </tr>
+        }
+        </table>
+}
+       

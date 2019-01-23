@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewData["Title"] = "TeamView";
+}
+
+<h2>@ViewBag.Team.CollegeName @ViewBag.Team.Mascot</h2>
+<h3>Conferece: @ViewBag.Team.Conference</h3>
+<h3>@ViewBag.Team.Location</h3>
+<h4>Coached By: @ViewBag.Team.Coach</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Event Group</th>
+            <th>Year</th>
+        </tr>
+    </thead>
+    @foreach (Runner runner in Model)
+    {
+        <tr href="#">
+
+            <td>
+                <a href="~/Home/RunnerView/@runner.Id">@runner.FullName</a>
+            </td>
+            <td>
+                @runner.EventGroup
+            </td>
+            <td>
+                @runner.Year
+            </td>
+        </tr>
+    }
+</table>
+
+<h2>Add a Runner</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="HandleNewRunner">
+            <input type="hidden" name="TeamId" value="@ViewBag.TeamId" />
+            <div class="form-group">
+                <label for="eventGroup" class="control-label">Event Group</label>
+                <select name="eventGroup" class="form-control">
+                    <option value="Sprints">Sprints</option>
+                    <option value="Mid-Distance">Mid-Distance</option>
+                    <option value="Distance">Distance</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="year" class="control-label">Year</label>
+                <select name="year" class="form-control">
+                    <option value="Freshman">Freshman</option>
+                    <option value="Sophomore">Sophomore</option>
+                    <option value="Junior">Junior</option>
+                    <option value="Senior">Senior</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="firstName" class="control-label">First Name</label>
+                <input name="firstName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="lastName" class="control-label">Last Name</label>
+                <input name="lastName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add a new Runner" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
